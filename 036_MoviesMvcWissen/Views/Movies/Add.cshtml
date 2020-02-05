@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+    <form action="Add" method="post">
+        <div class="form-group">
+            <label for="inputMovieName">Movie Name</label>
+            <input type="text" class="form-control" id="inputMovieName" name="inputName">
+        </div>
+        <div class="form-group">
+            <label for="inputProductionYear">Production Year</label>
+            <input type="text" class="form-control" id="inputProductionYear" name="inputProductionYear">
+        </div>
+        <div class="form-group">
+            <label for="inputBoxOfficeReturn">Box Office Return</label>
+            <input type="text" class="form-control" id="inputBoxOfficeReturn" name="inputBoxOfficeReturn">
+        </div>
+        <button type="reset" class="btn btn-danger">Clear</button> &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>

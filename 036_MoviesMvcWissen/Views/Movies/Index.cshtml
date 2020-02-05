@@ -1,0 +1,58 @@
+﻿@model List<_036_MoviesMvcWissen.Entities.Movie>
+@{
+    ViewBag.Title = "Movies";
+}
+
+    <table class="table">
+        <tr>
+            <td>
+                <b>Name</b>
+            </td>
+            <td>
+                <b>Production Year</b>
+            </td>
+            <td>
+                <b>Box Office Return</b>
+            </td>
+        </tr>
+        @{
+            bool flag = true;
+            string color = "black";
+            string textcolor = "yellow";
+
+            if (Model != null)
+            {
+                foreach (var movie in Model)
+                {
+                    if (flag)
+                    {
+                        color = "black";
+                        textcolor = "yellow";
+                    }
+                    else
+                    {
+                        color = "yellow";
+                        textcolor = "black";
+                    }
+
+                    flag = !flag;
+
+                    <tr style="background-color: @color !important; color: @textcolor">
+                        <td>
+                            @movie.Name
+                        </td>
+                        <td>
+                            @movie.ProductionYear
+                        </td>
+                        <td>
+                            @movie.BoxOfficeReturn
+                        </td>
+                    </tr>
+                }
+            }
+            <tr style="background-color: @textcolor; color: @color">
+                <td colspan="3" align="center">@Model.Count record(s) . </td>
+            </tr>
+
+        }
+    </table>
